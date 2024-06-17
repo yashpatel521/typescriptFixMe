@@ -73,8 +73,10 @@ class PointPerson implements Person {
   name: string;
   age: number;
   move: () => void;
-  constructor(name: string) {
+  constructor(name: string, age: number, move: () => void) {
     this.name = name;
+    this.age = age;
+    this.move = move;
   }
 }
 
