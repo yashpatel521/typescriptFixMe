@@ -51,8 +51,14 @@ var person1: Person = { name: "Bobby", move: function () {} };
 var person2: Person = { name: "Bobby", age: 42, move: function () {} };
 
 // Annotate mySearch to describe a function that accepts two string parameters
-var mySearch = function (src: string, sub: string): boolean {
-  return src.search(sub) != -1;
+
+interface SearchFunc {
+  src: string;
+  sub: string;
+}
+
+var mySearch = function (fn: SearchFunc): boolean {
+  return fn.src.search(fn.sub) != -1;
 };
 
 //annotate the constructor arguments and properties
